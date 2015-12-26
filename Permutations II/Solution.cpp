@@ -5,7 +5,7 @@
 using namespace std;
 class Solution {
 public:
-    vector<vector<int>> permuteUnique(vector<int>& nums) {
+    vector< vector<int> > permuteUnique(vector<int>& nums) {
         vector<vector<int> > result;
         vector<int> perm;
         sort(nums.begin(),nums.end());
@@ -14,7 +14,7 @@ public:
         return result;
     }
     //从index开始，到最后数字的全排列。全排列的前缀
-    void internalpermuteUnique(vector<int> &num, int index, vector<int> perm, vector<vector<int> > &result) {
+    void internalpermuteUnique(vector<int> &num, int index, vector<int> perm, vector< vector<int> > &result) {
         int size = num.size();
 
         if (size == index) {
@@ -40,10 +40,10 @@ public:
 
 };
 int main(){
-    int a[4] = {1,2,3,4};
+    int a[4] = {1,1,2,2};
     vector<int> nums(a,a+4);
     Solution s;
-    vector< vector<int> > res = s.permute(nums);
+    vector< vector<int> > res = s.permuteUnique(nums);
     for(int i=0;i<res.size();i++){
         for(int j=0;j<res[i].size();j++)
             printf("%d ",res[i][j]);
